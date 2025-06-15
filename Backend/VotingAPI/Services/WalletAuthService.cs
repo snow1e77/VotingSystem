@@ -92,28 +92,28 @@ namespace VotingAPI.Services
             return challenge;
         }
 
-        public async Task<bool> VerifySignature(string walletAddress, string challenge, string signature)
+        public Task<bool> VerifySignature(string walletAddress, string challenge, string signature)
         {
             try
             {
                 // Check if we have an active challenge for this wallet
                 if (!_activeUserChallenges.TryGetValue(walletAddress, out var challengeInfo))
                 {
-                    return false;
+                    return Task.FromResult(false);
                 }
                 
                 // Check if challenge has expired
                 if (challengeInfo.ExpiresAt < DateTime.UtcNow)
                 {
                     _activeUserChallenges.TryRemove(walletAddress, out _);
-                    return false;
+                    return Task.FromResult(false);
                 }
                 
                 // Check if too many failed attempts
                 if (challengeInfo.FailedAttempts >= MAX_FAILED_ATTEMPTS)
                 {
                     _activeUserChallenges.TryRemove(walletAddress, out _);
-                    return false;
+                    return Task.FromResult(false);
                 }
                 
                 // Verify that this is the challenge we generated for this wallet
@@ -121,7 +121,7 @@ namespace VotingAPI.Services
                 {
                     // Increment failed attempts
                     challengeInfo.FailedAttempts++;
-                    return false;
+                    return Task.FromResult(false);
                 }
 
                 // Verify the signature
@@ -135,13 +135,13 @@ namespace VotingAPI.Services
                 {
                     // Increment failed attempts
                     challengeInfo.FailedAttempts++;
-                    return false;
+                    return Task.FromResult(false);
                 }
                 
                 // If valid, remove the challenge
                 _activeUserChallenges.TryRemove(walletAddress, out _);
                 
-                return true;
+                return Task.FromResult(true);
             }
             catch (Exception ex)
             {
@@ -153,7 +153,7 @@ namespace VotingAPI.Services
                     challengeInfo.FailedAttempts++;
                 }
                 
-                return false;
+                return Task.FromResult(false);
             }
         }
 

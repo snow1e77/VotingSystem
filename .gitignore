@@ -18,7 +18,6 @@ config.local.php
 
 # Игнорируем логи
 logs/
-node_modules/
 
 # Игнорируем папки build и dist с большими файлами
 Frontend/voting-ui/dist/
@@ -28,3 +27,10 @@ Frontend/voting-ui/node_modules/
 .cache/
 **/БлокчейнГолос*
 **/electron.exe
+
+# Артефакты сборки .NET
+**/bin/
+**/obj/
+
+# Артефакты сборки React
+Frontend/voting-ui/build/
