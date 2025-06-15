@@ -1,0 +1,37 @@
+# Настройка параметров контракта
+
+## 1. Бэкенд (ASP.NET Core API)
+
+Перед запуском бэкенда, установите следующие переменные окружения:
+
+```
+CONTRACT_ADDRESS=0x1A0fAb9881D1B51A153039543dC7017eE644c794
+RPC_URL=https://sepolia.infura.io/v3/72ea578fc2dd47549a039528687c8a7a
+ADMIN_PRIVATE_KEY=5a856867eb81d1f531d9dc32bf52a7238e43e8af3cd67885b2d693a31cc0e371
+```
+
+### Как установить переменные окружения в Windows:
+```powershell
+$env:CONTRACT_ADDRESS="0x1A0fAb9881D1B51A153039543dC7017eE644c794"
+$env:RPC_URL="https://sepolia.infura.io/v3/72ea578fc2dd47549a039528687c8a7a"
+$env:ADMIN_PRIVATE_KEY="5a856867eb81d1f531d9dc32bf52a7238e43e8af3cd67885b2d693a31cc0e371"
+```
+
+### Как установить переменные окружения в Linux/Mac:
+```bash
+export CONTRACT_ADDRESS=0x1A0fAb9881D1B51A153039543dC7017eE644c794
+export RPC_URL=https://sepolia.infura.io/v3/72ea578fc2dd47549a039528687c8a7a
+export ADMIN_PRIVATE_KEY=5a856867eb81d1f531d9dc32bf52a7238e43e8af3cd67885b2d693a31cc0e371
+```
+
+## 2. Фронтенд (React)
+
+Во фронтенд-приложении адрес контракта уже обновлен в коде. Если вы хотите использовать переменные окружения, создайте файл `.env` в папке Frontend/voting-ui со следующим содержимым:
+
+```
+REACT_APP_CONTRACT_ADDRESS=0x1A0fAb9881D1B51A153039543dC7017eE644c794
+```
+
+## ВНИМАНИЕ: Безопасность
+
+Приватный ключ администратора является конфиденциальной информацией. Не публикуйте его в открытом доступе. Используйте переменные окружения для безопасного хранения этих данных. 

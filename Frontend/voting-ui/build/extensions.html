@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проверка расширений браузера</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #333;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+    .extension {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .extension h2 {
+      margin-top: 0;
+    }
+    .action {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Расширения, которые могут блокировать JavaScript</h1>
+  
+  <p>Некоторые расширения браузера могут блокировать JavaScript и мешать работе приложения. Проверьте, не установлены ли у вас следующие расширения:</p>
+  
+  <div class="extension">
+    <h2>NoScript</h2>
+    <p>Блокирует выполнение JavaScript на всех сайтах по умолчанию.</p>
+    <div class="action">
+      <strong>Решение:</strong> Нажмите на иконку NoScript, затем выберите "Временно разрешить всё на этой странице" или добавьте сайт в белый список.
+    </div>
+  </div>
+  
+  <div class="extension">
+    <h2>uBlock Origin</h2>
+    <p>Может блокировать некоторые скрипты в зависимости от настроек.</p>
+    <div class="action">
+      <strong>Решение:</strong> Нажмите на иконку uBlock Origin, затем нажмите кнопку питания, чтобы отключить его для текущего сайта.
+    </div>
+  </div>
+  
+  <div class="extension">
+    <h2>AdBlock / AdBlock Plus</h2>
+    <p>Может блокировать скрипты, которые считает рекламными.</p>
+    <div class="action">
+      <strong>Решение:</strong> Нажмите на иконку AdBlock, выберите "Приостановить на этом сайте" или "Отключить на этом сайте".
+    </div>
+  </div>
+  
+  <div class="extension">
+    <h2>Privacy Badger</h2>
+    <p>Может блокировать скрипты, которые считает следящими.</p>
+    <div class="action">
+      <strong>Решение:</strong> Нажмите на иконку Privacy Badger, затем переключите ползунок для домена на зеленый (разрешено).
+    </div>
+  </div>
+  
+  <div class="extension">
+    <h2>JavaScript Blocker</h2>
+    <p>Блокирует JavaScript на всех сайтах.</p>
+    <div class="action">
+      <strong>Решение:</strong> Нажмите на иконку расширения и разрешите JavaScript для текущего сайта.
+    </div>
+  </div>
+  
+  <h2>Проверка встроенных настроек браузера</h2>
+  <p>Также JavaScript может быть отключен в настройках самого браузера:</p>
+  <ul>
+    <li><strong>Chrome:</strong> Настройки → Конфиденциальность и безопасность → Настройки сайта → JavaScript → "Разрешены (рекомендуется)"</li>
+    <li><strong>Firefox:</strong> Настройки → Приватность и защита → разрешить JavaScript (обычно включен по умолчанию)</li>
+    <li><strong>Edge:</strong> Настройки → Разрешения сайта → JavaScript → Разрешено</li>
+    <li><strong>Safari:</strong> Safari → Настройки → Безопасность → включите "Включить JavaScript"</li>
+  </ul>
+  
+  <a href="/" class="back-link">Вернуться на главную</a>
+</body>
+</html> 

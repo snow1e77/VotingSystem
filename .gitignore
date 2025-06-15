@@ -1,0 +1,30 @@
+# Игнорируем файлы IDE
+.idea/
+.vscode/
+.DS_Store
+
+# Игнорируем папки с зависимостями
+node_modules/
+vendor/
+
+# Игнорируем файлы конфигурации
+.env
+config.local.php
+
+# Игнорируем сгенерированные файлы
+*.o
+*.pyc
+*.class
+
+# Игнорируем логи
+logs/
+node_modules/
+
+# Игнорируем папки build и dist с большими файлами
+Frontend/voting-ui/dist/
+Frontend/voting-ui/node_modules/
+*.exe
+*.pack
+.cache/
+**/БлокчейнГолос*
+**/electron.exe

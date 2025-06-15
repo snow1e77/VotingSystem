@@ -1,0 +1,87 @@
+{
+  "appId": "com.blockchain.voting",
+  "productName": "БлокчейнГолос",
+  "description": "Безопасная и прозрачная система голосования на блокчейне",
+  "copyright": "Copyright © 2025 БлокчейнГолос",
+  "directories": {
+    "output": "dist",
+    "buildResources": "public"
+  },
+  "files": [
+    "build/**/*",
+    "electron/**/*",
+    "package.json",
+    "!**/node_modules/**/{CHANGELOG.md,README.md,README,readme.md,readme,test,__tests__,tests,powered-test,example,examples,*.d.ts}",
+    "!**/node_modules/**/*.{tgz,bin,jks,pem,obj,cache,map,cc}",
+    "!**/node_modules/.bin"
+  ],
+  "extraMetadata": {
+    "main": "public/electron.js"
+  },
+  "asar": true,
+  "asarUnpack": [
+    "**/*.{node,dll,exe}"
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      },
+      {
+        "target": "portable",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "public/favicon.ico",
+    "artifactName": "${productName}-${version}-${arch}.${ext}",
+    "publisherName": "БлокчейнГолос"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "БлокчейнГолос",
+    "license": "LICENSE.txt",
+    "artifactName": "${productName}-${version}-setup.${ext}",
+    "installerIcon": "public/favicon.ico",
+    "uninstallerIcon": "public/favicon.ico"
+  },
+  "portable": {
+    "artifactName": "${productName}-${version}-portable.${ext}"
+  },
+  "mac": {
+    "target": [],
+    "identity": null,
+    "icon": "public/logo512.png",
+    "category": "public.app-category.utilities"
+  },
+  "linux": {
+    "target": [
+      "AppImage",
+      "deb"
+    ],
+    "icon": "public/logo512.png",
+    "category": "Office",
+    "synopsis": "Система голосования на блокчейне",
+    "description": "Безопасная и прозрачная система голосования на блокчейне Ethereum."
+  },
+  "appImage": {
+    "artifactName": "${productName}-${version}.${ext}"
+  },
+  "deb": {
+    "artifactName": "${productName}-${version}.${ext}"
+  },
+  "publish": {
+    "provider": "github",
+    "releaseType": "release"
+  },
+  "afterPack": "./afterPack.js",
+  "protocols": {
+    "name": "blockchain-voting-protocol",
+    "schemes": [
+      "blockchain-voting"
+    ]
+  }
+} 
